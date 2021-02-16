@@ -12,31 +12,18 @@ def index(request):
         if form.is_valid():
             print("valid")
             image_file = ImageFileModel()
-            image_file.title = request.POST['title']
             image_file.image = request.FILES['image']
-            image_file.author = request.user
             image_file.published_date = timezone.now()
 
             image_file.save()
             form.save()
-            render(request, 'upload/index.html')
+            render(request, 'upload/index.html', {'form': form})
         else:
             print("not")
             form = UploadForm()
-            render(request, 'upload/index.html')
+            render(request, 'upload/index.html', {'form': form})
     else:
         form = UploadForm()
     return render(request, 'upload/index.html', {'form': form})
 
-
-# def form_upload(request):
-#     if request.method == 'POST':
-#         form = UploadForm(request.POST, request.FILES)
-#
-#     if form.is_valid():
-#         form.save()
-#         return redirect('index')
-#     else:
-#         form = UploadForm()
-#         return redirect('index')
 

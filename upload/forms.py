@@ -6,4 +6,4 @@ from upload.models import ImageFileModel
 class UploadForm(forms.ModelForm):
     class Meta:
         model = ImageFileModel
-        fields = ('title', 'image', 'link')
+        fields = ('image', )

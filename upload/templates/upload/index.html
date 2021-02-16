@@ -4,7 +4,6 @@
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="file" id="uploadImageFile" name="uploadImageFile">
     <button type="submit">アップロードする</button>
 </form>
 {% endblock %}

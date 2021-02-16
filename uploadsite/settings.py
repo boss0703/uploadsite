@@ -123,5 +123,3 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = Path(BASE_DIR) / 'media'
 MEDIA_URL = '/media/'
 
-IMAGE_ROOT = Path(BASE_DIR) / 'images'
-IMAGE_URL = '/images/'
